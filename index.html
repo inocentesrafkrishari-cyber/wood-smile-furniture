@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Wood Smile Furniture: custom tables, cabinets, lighting and hand carving, made to order in Rodriguez, Rizal.">
+<meta property="og:title" content="Wood Smile Furniture">
+<meta property="og:description" content="Custom furniture made to order in Rodriguez, Rizal.">
+<meta property="og:image" content="images/n1.jpg">
+<title>Wood Smile Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&display=swap">
+<style>
+/* Layout: quiet gallery. Wide-set headlines, lots of air, one uniform photo grid, photos carry the colour.
+   Spacing scale only: 8 / 16 / 24 / 40 / 64 / 120. */
+:root{
+  --bg:#F4F3F0; --surface:#EAE8E3; --ink:#1E1A17; --soft:#6F6861; --line:#DAD6CF; --wood:#8A5A36; --on-ink:#F4F3F0;
+  --font:"Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:120px;
+  --gut:clamp(20px,5vw,64px);
+  --ease:cubic-bezier(.22,.7,.2,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141210;--surface:#1E1B18;--ink:#EEEAE4;--soft:#9C948B;--line:#2E2A26;--wood:#C98F5E;--on-ink:#141210;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141210;--surface:#1E1B18;--ink:#EEEAE4;--soft:#9C948B;--line:#2E2A26;--wood:#C98F5E;--on-ink:#141210;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;padding-inline:var(--gut);padding-block:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin-inline:auto}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--wood);outline-offset:4px;border-radius:2px}
+h1,h2,h3{margin:0;font-weight:600;font-stretch:118%;line-height:1;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+.small{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);font-stretch:110%}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;margin-inline:calc(-1 * var(--gut));padding-inline:var(--gut);background:rgba(244,243,240,.86);background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:transform .45s var(--ease),border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav.hide{transform:translateY(-100%)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);height:72px}
+.logo{font-weight:700;font-stretch:125%;font-size:17px;letter-spacing:-.01em}
+.links{display:flex;align-items:center;gap:var(--s4);font-size:15px}
+.links a{position:relative;color:var(--soft);transition:color .25s}
+.links a:not(.cta)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.links a:hover{color:var(--ink)}
+.links a:hover::after{transform:scaleX(1);transform-origin:left}
+.cta{display:inline-flex;align-items:center;height:42px;padding-inline:20px;border-radius:999px;background:var(--ink);color:var(--on-ink)!important;font-weight:500;transition:transform .3s var(--ease),opacity .3s}
+.cta:hover{transform:translateY(-2px)}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:transparent;cursor:pointer;place-items:center}
+.menu-btn span{display:block;width:16px;height:1.5px;background:var(--ink);transition:transform .35s var(--ease)}
+.menu-btn span+span{margin-top:4px}
+.menu-btn[aria-expanded="true"] span:first-child{transform:translateY(2.75px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-2.75px) rotate(-45deg)}
+[hidden]{display:none!important}
+.nav .sheet{display:none}
+@media (max-width:760px){
+  .links a:not(.cta){display:none}
+  .menu-btn{display:grid}
+  .nav .sheet{display:flex;height:auto;align-items:flex-start;flex-direction:column;gap:var(--s2);padding-block:var(--s2) var(--s4);font-size:28px;font-weight:600;font-stretch:118%}
+}
+
+/* hero */
+.hero{padding-block:var(--s5) var(--s6)}
+.hero h1{font-size:clamp(44px,8.2vw,112px);max-width:12ch}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line>span{display:block}
+.hero h1 .muted{color:var(--soft);font-weight:400}
+.hero-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:var(--s4);margin-top:var(--s4)}
+.hero-row p{max-width:42ch;color:var(--soft);font-size:18px}
+.scroll-hint{display:flex;align-items:center;gap:var(--s1);font-size:14px;color:var(--soft)}
+.scroll-hint i{display:block;width:1px;height:40px;background:var(--line);position:relative;overflow:hidden}
+.scroll-hint i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--ink)}
+.hero-pics{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:var(--s2);margin-top:var(--s5);align-items:start}
+.hero-pics figure{margin:0;overflow:hidden;border-radius:2px;background:var(--surface)}
+.hero-pics img{width:100%;height:100%;object-fit:cover}
+.hero-pics .p1{aspect-ratio:3/4;margin-top:var(--s5)}
+.hero-pics .p2{aspect-ratio:4/5}
+.hero-pics .p3{aspect-ratio:3/4;margin-top:var(--s6)}
+@media (max-width:760px){
+  .hero{padding-block:var(--s4) var(--s5)}
+  .hero-row{grid-template-columns:minmax(0,1fr)}
+  .scroll-hint{display:none}
+  .hero-pics{grid-template-columns:1fr 1fr;gap:12px;margin-top:var(--s4)}
+  .hero-pics .p2{grid-column:1 / -1;order:-1;aspect-ratio:4/3}
+  .hero-pics .p1,.hero-pics .p3{margin-top:0;aspect-ratio:4/5}
+}
+
+/* sections */
+.sec{padding-block:var(--s6);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s3) var(--s5);align-items:end;margin-bottom:var(--s5)}
+.sec-head h2{font-size:clamp(34px,4.6vw,60px)}
+.sec-head p{color:var(--soft);max-width:44ch;justify-self:end}
+@media (max-width:760px){.sec{padding-block:var(--s5)}.sec-head{grid-template-columns:minmax(0,1fr);margin-bottom:var(--s4)}.sec-head p{justify-self:start}}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5);align-items:start}
+.about .big{font-size:clamp(24px,2.6vw,34px);line-height:1.3;font-weight:400;letter-spacing:-.01em;text-wrap:pretty}
+.about .big b{font-weight:600}
+.about .side{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4) var(--s3);padding-top:var(--s1)}
+.about .side div{display:flex;flex-direction:column;gap:6px;padding-top:var(--s2);border-top:1px solid var(--line)}
+.about .side strong{font-weight:500;font-stretch:118%;font-size:20px;line-height:1.2}
+.about .side span{color:var(--soft);font-size:15px}
+@media (max-width:860px){.about{grid-template-columns:minmax(0,1fr);gap:var(--s4)}}
+
+/* work grid */
+.tabs{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-bottom:var(--s4)}
+.tabs button{background:none;border:0;padding:6px 0;cursor:pointer;font-size:15px;color:var(--soft);position:relative;transition:color .25s}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--ink);transform:scaleX(0);transition:transform .45s var(--ease)}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-pressed="true"]{color:var(--ink)}
+.tabs button[aria-pressed="true"]::after{transform:scaleX(1)}
+.tabs sup{font-size:10px;margin-left:3px;color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5) var(--s3)}
+.card{display:flex;flex-direction:column;gap:var(--s2);background:none;border:0;padding:0;text-align:left;cursor:zoom-in}
+.card .ph{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px;background:var(--surface)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.card:hover img,.card:focus-visible img{transform:scale(1.045)}
+.card .ph::after{content:"View";position:absolute;right:12px;bottom:12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:rgba(244,243,240,.92);color:#1E1A17;opacity:0;transform:translateY(6px);transition:all .4s var(--ease)}
+.card:hover .ph::after,.card:focus-visible .ph::after{opacity:1;transform:none}
+.card .cap{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2)}
+.card .cap b{font-weight:500;font-size:16px}
+.card .cap span{font-size:13px;color:var(--soft);white-space:nowrap}
+.card[hidden]{display:none!important}
+.more{display:flex;justify-content:center;margin-top:var(--s5)}
+.btn-line{display:inline-flex;align-items:center;gap:10px;height:48px;padding-inline:26px;border-radius:999px;border:1px solid var(--ink);background:transparent;cursor:pointer;font-size:15px;font-weight:500;transition:background .3s,color .3s}
+.btn-line:hover{background:var(--ink);color:var(--on-ink)}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4) var(--s2)}}
+@media (max-width:420px){.card .cap{flex-direction:column;gap:2px}}
+
+/* feature */
+.feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:var(--s5);align-items:center}
+.feature .pics{display:grid;grid-template-columns:2fr 1fr;gap:var(--s2)}
+.feature figure{margin:0;overflow:hidden;border-radius:2px;background:var(--surface)}
+.feature img{width:100%;height:100%;object-fit:cover}
+.feature .f1{aspect-ratio:4/5;grid-row:span 2}
+.feature .f2,.feature .f3{aspect-ratio:auto;height:100%}
+.feature h2{font-size:clamp(34px,4.6vw,60px);margin-bottom:var(--s3)}
+.feature p{color:var(--soft);max-width:40ch}
+.list{list-style:none;padding:0;margin:var(--s4) 0 0;border-top:1px solid var(--line)}
+.list li{display:flex;justify-content:space-between;gap:var(--s3);padding-block:var(--s2);border-bottom:1px solid var(--line);font-size:16px}
+.list li span{color:var(--soft);text-align:right}
+@media (max-width:860px){.feature{grid-template-columns:minmax(0,1fr);gap:var(--s4)}}
+
+/* carving strip */
+.strip-wrap{margin-inline:calc(-1 * var(--gut))}
+.strip{display:flex;gap:var(--s3);overflow-x:auto;scroll-snap-type:x mandatory;padding-inline:var(--gut);padding-bottom:var(--s3);scrollbar-width:thin;scrollbar-color:var(--line) transparent;cursor:grab;-webkit-overflow-scrolling:touch}
+.strip.drag{cursor:grabbing;scroll-snap-type:none}
+.strip figure{flex:0 0 auto;width:clamp(240px,26vw,340px);margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:var(--s2)}
+.strip .ph{aspect-ratio:3/4;overflow:hidden;border-radius:2px;background:var(--surface)}
+.strip img{width:100%;height:100%;object-fit:cover;pointer-events:none;transition:transform 1.1s var(--ease)}
+.strip figure:hover img{transform:scale(1.04)}
+.strip figcaption{font-size:15px}
+.strip-ctrl{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);margin-top:var(--s3)}
+.bar{flex:1;height:1px;background:var(--line);position:relative;max-width:320px}
+.bar i{position:absolute;left:0;top:0;height:1px;background:var(--ink);width:20%;transition:transform .2s linear}
+.arrows{display:flex;gap:var(--s1)}
+.arrows button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center;transition:border-color .3s,background .3s,color .3s}
+.arrows button:hover{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.arrows svg{width:18px;height:18px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
+.step{display:flex;flex-direction:column;gap:var(--s1);padding-top:var(--s3);border-top:1px solid var(--ink)}
+.step .n{font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums}
+.step h3{font-size:22px;font-weight:500;margin-top:var(--s2)}
+.step p{color:var(--soft);font-size:15.5px}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4) var(--s3)}}
+@media (max-width:480px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* contact */
+.contact{padding-block:var(--s6);border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(44px,8vw,110px);max-width:11ch}
+.contact-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5);margin-top:var(--s5);align-items:end}
+.contact-row>p{color:var(--soft);max-width:38ch;font-size:18px}
+.info{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.info .r{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:var(--s2);align-items:center;min-height:60px;border-bottom:1px solid var(--line)}
+.info .r>span:first-child{color:var(--soft);font-size:14px}
+.info .v{overflow-wrap:anywhere}
+.info a.v{transition:color .25s}.info a.v:hover{color:var(--wood)}
+.copy{height:32px;padding-inline:14px;border-radius:999px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:13px;transition:border-color .25s}
+.copy:hover{border-color:var(--ink)}
+.contact .cta{margin-top:var(--s4);height:52px;padding-inline:28px;font-size:16px}
+@media (max-width:760px){.contact{padding-block:var(--s5)}.contact-row{grid-template-columns:minmax(0,1fr);gap:var(--s4)}.info .r{grid-template-columns:90px minmax(0,1fr) auto}}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2);padding-block:var(--s4);border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
+
+/* viewer */
+dialog.lb{border:0;padding:0;background:transparent;width:min(92vw,1000px);max-height:94vh;color:#EEEAE4;overflow:visible}
+dialog.lb::backdrop{background:rgba(14,12,10,.92)}
+dialog.lb[open]{animation:fade .35s var(--ease)}
+dialog.lb img{max-height:78vh;width:auto;max-width:100%;margin-inline:auto;border-radius:2px}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);padding-top:var(--s2)}
+.lb-bar span{color:#9C948B;font-size:14px;margin-left:var(--s1)}
+.lb-btns{display:flex;gap:var(--s1)}
+.lb-btns button{width:44px;height:44px;border-radius:50%;border:1px solid #3A3530;background:transparent;color:#EEEAE4;cursor:pointer;font-size:16px;transition:background .25s}
+.lb-btns button:hover{background:#2A2622}
+@keyframes fade{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+
+/* motion */
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 .line>span{animation:up 1.1s var(--ease) both}
+  .hero h1 .line:nth-child(2)>span{animation-delay:.08s}
+  .hero h1 .line:nth-child(3)>span{animation-delay:.16s}
+  .hero-row{animation:soft 1.2s var(--ease) .3s both}
+  .hero-pics figure{animation:wipe 1.4s var(--ease) both}
+  .hero-pics .p2{animation-delay:.25s}.hero-pics .p1{animation-delay:.4s}.hero-pics .p3{animation-delay:.55s}
+  .hero-pics img{animation:settle 2.4s var(--ease) both}
+  .scroll-hint i::after{animation:drip 2.2s var(--ease) infinite}
+  .js .rv{opacity:.001;transform:translateY(32px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .rv-img .ph,.js .rv-img figure{clip-path:inset(12% 0 0 0);transition:clip-path 1.2s var(--ease)}
+  .js .rv-img.in .ph,.js .rv-img.in figure{clip-path:inset(0 0 0 0)}
+  @keyframes up{from{transform:translateY(105%)}to{transform:none}}
+  @keyframes soft{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @keyframes wipe{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+  @keyframes settle{from{transform:scale(1.15)}to{transform:scale(1)}}
+  @keyframes drip{0%{top:-40%}100%{top:100%}}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Wood Smile</a>
+    <nav class="links" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#resin">Resin tables</a>
+      <a href="#carving">Carving</a>
+      <a href="#process">Process</a>
+      <a class="cta" href="#contact">Inquire</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="wrap sheet" id="sheet" hidden>
+    <a href="#work">Work</a><a href="#resin">Resin tables</a><a href="#carving">Carving</a><a href="#process">Process</a><a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <h1><span class="line"><span>Furniture made</span></span><span class="line"><span>for your space,</span></span><span class="line"><span class="muted">in Rizal.</span></span></h1>
+    <div class="hero-row">
+      <p>We're a small woodshop in Rodriguez. Tell us what you need and where it goes, and we'll build it to fit.</p>
+      <a class="scroll-hint" href="#work"><i></i>See our work</a>
+    </div>
+    <div class="hero-pics">
+      <figure class="p1"><img data-k="n31" alt="Round dining table with rattan-back chairs"></figure>
+      <figure class="p2"><img data-k="n1" alt="Resin river table with blue-green resin"></figure>
+      <figure class="p3"><img data-k="n21" alt="Live-edge wood ceiling light"></figure>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="about">
+    <div class="about">
+      <p class="big rv">We build <b>dining sets, kitchens, beds, lights and statues</b>, one order at a time. Nothing comes off a shelf. Every piece starts with your measurements.</p>
+      <div class="side rv">
+        <div><strong>Made to measure</strong><span>Built to your exact size</span></div>
+        <div><strong>Solid wood</strong><span>Hardwood and live-edge slabs</span></div>
+        <div><strong>3D preview</strong><span>See bigger builds before we start</span></div>
+        <div><strong>Delivery</strong><span>We bring it to your door</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="work">
+    <div class="sec-head">
+      <h2 class="rv">Recent work</h2>
+      <p class="rv">A few pieces we've made for clients. Tap a photo to see it bigger.</p>
+    </div>
+    <div class="tabs" id="tabs" role="group" aria-label="Filter work"></div>
+    <div class="grid" id="grid"></div>
+    <div class="more"><button class="btn-line" id="more" type="button">Show more</button></div>
+  </section>
+
+  <section class="wrap sec" id="resin">
+    <div class="feature">
+      <div class="pics rv-img">
+        <figure class="f1"><img data-k="n10" alt="Resin table top with black resin river on a steel base"></figure>
+        <figure class="f2"><img data-k="n9" alt="Close-up of a resin slab"></figure>
+        <figure class="f3"><img data-k="n44" alt="Wood table with rattan panels" style="object-position:30% 50%"></figure>
+      </div>
+      <div class="rv">
+        <h2>Resin river tables</h2>
+        <p>One slab, its natural edge left on, and resin poured through the gap. Each one comes out different.</p>
+        <ul class="list">
+          <li>Sizes<span>Dining, coffee, side</span></li>
+          <li>Resin<span>Clear, black, blue, green</span></li>
+          <li>Base<span>Steel or wood</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="carving">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="rv">Hand carving</h2>
+        <p class="rv">Saints, busts, wall reliefs and seals, carved and painted in the shop. We also repaint old pieces.</p>
+      </div>
+    </div>
+    <div class="strip-wrap">
+      <div class="strip" id="strip" tabindex="0" aria-label="Carving photos, scroll sideways">
+        <figure><div class="ph"><img data-k="n14" alt="Carved bust of the Virgin Mary with gold crown"></div><figcaption>Mary, bust</figcaption></figure>
+        <figure><div class="ph"><img data-k="n15" alt="Carved bust of Christ with gold crown"></div><figcaption>Christ the King, bust</figcaption></figure>
+        <figure><div class="ph"><img data-k="n12" alt="Painted standing statue of the Virgin Mary"></div><figcaption>Immaculate Conception</figcaption></figure>
+        <figure><div class="ph"><img data-k="n17" alt="Golden wall relief with sun and figures"></div><figcaption>Wall relief</figcaption></figure>
+        <figure><div class="ph"><img data-k="n13" alt="Christ face carved into driftwood"></div><figcaption>Driftwood carving</figcaption></figure>
+        <figure><div class="ph"><img data-k="n2" alt="Carved and painted lodge seal"></div><figcaption>Lodge seal</figcaption></figure>
+        <figure><div class="ph"><img data-k="n16" alt="Wood block wall art with carved arm"></div><figcaption>Wood block wall art</figcaption></figure>
+        <figure><div class="ph"><img data-k="fb1" alt="Engraved wooden house number sign"></div><figcaption>House sign</figcaption></figure>
+      </div>
+    </div>
+    <div class="wrap strip-ctrl">
+      <div class="bar"><i id="bar"></i></div>
+      <div class="arrows"><button type="button" id="s-prev" aria-label="Scroll left"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4 6 9l5 5"/></svg></button><button type="button" id="s-next" aria-label="Scroll right"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m7 4 5 5-5 5"/></svg></button></div>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="process">
+    <div class="sec-head">
+      <h2 class="rv">How we work</h2>
+      <p class="rv">Four simple steps from your first message to delivery.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="n">01</span><h3>Message us</h3><p>Send the size, a photo of the space and any pegs you like.</p></div>
+      <div class="step rv"><span class="n">02</span><h3>Design and price</h3><p>We send a sketch or 3D layout with the cost and timeline.</p></div>
+      <div class="step rv"><span class="n">03</span><h3>We build it</h3><p>Cut, joined, sanded and finished by hand in our shop.</p></div>
+      <div class="step rv"><span class="n">04</span><h3>Delivery</h3><p>We bring it over and set it up.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap contact" id="contact">
+    <h2 class="rv">Have a space in mind?</h2>
+    <div class="contact-row">
+      <div class="rv">
+        <p>Send us the measurements and a photo, and we'll get back to you with ideas and a price.</p>
+        <a class="cta" href="https://www.facebook.com/profile.php?id=100084196222669" target="_blank" rel="noopener">Message us on Facebook</a>
+      </div>
+      <div class="info rv">
+        <div class="r"><span>Email</span><span class="v" id="email">thewoodsmilefurniture@gmail.com</span><button class="copy" id="copy" type="button">Copy</button></div>
+        <div class="r"><span>Facebook</span><a class="v" href="https://www.facebook.com/profile.php?id=100084196222669" target="_blank" rel="noopener">Wood Smile Furniture</a><span></span></div>
+        <div class="r"><span>Instagram</span><a class="v" href="https://www.instagram.com/woodsmilefurniture_/" target="_blank" rel="noopener">@woodsmilefurniture_</a><span></span></div>
+        <div class="r"><span>Shop</span><span class="v">Rodriguez, Rizal</span><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap"><span>© 2026 Wood Smile Furniture</span><a href="#top">Back to top ↑</a></footer>
+</main>
+
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <img id="lb-img" alt="">
+  <div class="lb-bar"><div><b id="lb-t"></b><span id="lb-c"></span></div>
+  <div class="lb-btns"><button type="button" id="lb-p" aria-label="Previous">←</button><button type="button" id="lb-n" aria-label="Next">→</button><button type="button" id="lb-x" aria-label="Close">✕</button></div></div>
+</dialog>
+
+<script>
+document.documentElement.classList.add('js');
+var IMG = {"fb1": "images/fb1.jpg", "fb11": "images/fb11.jpg", "n1": "images/n1.jpg", "n10": "images/n10.jpg", "n11": "images/n11.jpg", "n12": "images/n12.jpg", "n13": "images/n13.jpg", "n14": "images/n14.jpg", "n15": "images/n15.jpg", "n16": "images/n16.jpg", "n17": "images/n17.jpg", "n18": "images/n18.jpg", "n19": "images/n19.jpg", "n2": "images/n2.jpg", "n20": "images/n20.jpg", "n21": "images/n21.jpg", "n22": "images/n22.jpg", "n23": "images/n23.jpg", "n24": "images/n24.jpg", "n25": "images/n25.jpg", "n26": "images/n26.jpg", "n27": "images/n27.jpg", "n28": "images/n28.jpg", "n29": "images/n29.jpg", "n30": "images/n30.jpg", "n31": "images/n31.jpg", "n32": "images/n32.jpg", "n44": "images/n44.jpg", "n5": "images/n5.jpg", "n6": "images/n6.jpg", "n7": "images/n7.jpg", "n8": "images/n8.jpg", "n9": "images/n9.jpg"};
+var ITEMS = [
+  ["n31","Round dining set","Tables"],["n27","Curved bar counter","Built-ins"],["n29","Live-edge bed","Bedroom"],
+  ["n5","Dining set","Tables"],["n20","Slab pendant light","Lighting"],["n28","Butterfly bench","Outdoor"],
+  ["n7","Long dining table","Tables"],["n22","Kitchen island","Built-ins"],["n11","Diamond pendant","Lighting"],
+  ["n19","Lounge chairs","Outdoor"],["n8","Table and bench","Tables"],["n23","Kitchen fit-out","Built-ins"],
+  ["n18","Patio set","Outdoor"],["n32","Square chandelier","Lighting"],["n30","Platform bed","Bedroom"],
+  ["n25","Wine rack","Built-ins"],["n26","Bar tables","Built-ins"],["n6","Dining set, unfinished","Tables"],
+  ["n44","Rattan side table","Tables"],["fb11","Daybed bench","Outdoor"],["n24","Kitchen counters","Built-ins"]
+];
+document.querySelectorAll('img[data-k]').forEach(function(i){ i.src = IMG[i.dataset.k]; });
+
+/* work grid */
+var grid=document.getElementById('grid'), tabs=document.getElementById('tabs'), moreBtn=document.getElementById('more');
+var STEP=(window.innerWidth<=900)?8:9; var cat='All', limit=STEP;
+var cats=['All'].concat(ITEMS.map(function(x){return x[2]}).filter(function(c,i,a){return a.indexOf(c)===i}));
+cats.forEach(function(c){
+  var b=document.createElement('button'); b.type='button'; b.id='tab-'+c.toLowerCase().replace(/\W/g,'');
+  var n=c==='All'?ITEMS.length:ITEMS.filter(function(x){return x[2]===c}).length;
+  b.innerHTML=c+'<sup>'+n+'</sup>'; b.setAttribute('aria-pressed',String(c==='All'));
+  b.addEventListener('click',function(){ cat=c; limit=STEP; tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))}); render(true); });
+  tabs.appendChild(b);
+});
+ITEMS.forEach(function(it,i){
+  var b=document.createElement('button'); b.type='button'; b.className='card'; b.dataset.i=i;
+  b.innerHTML='<div class="ph"><img alt=""></div><div class="cap"><b></b><span></span></div>';
+  var im=b.querySelector('img'); im.src=IMG[it[0]]; im.alt=it[1];
+  b.querySelector('b').textContent=it[1]; b.querySelector('.cap span').textContent=it[2];
+  b.addEventListener('click',function(){ openLb(i); });
+  grid.appendChild(b);
+});
+function shown(){ return Array.prototype.filter.call(grid.children,function(c){return !c.hidden}).map(function(c){return +c.dataset.i}); }
+function render(animate){
+  var k=0, total=0;
+  Array.prototype.forEach.call(grid.children,function(card){
+    var match = cat==='All' || ITEMS[card.dataset.i][2]===cat;
+    if(match) total++;
+    var show = match && k < limit; if(match && show) k++;
+    card.hidden=!show;
+    if(show && animate && card.animate && !reduce){ card.animate([{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'none'}],{duration:700,delay:(k-1)%STEP*50,easing:'cubic-bezier(.22,.7,.2,1)',fill:'backwards'}); }
+  });
+  moreBtn.parentNode.hidden = total<=limit;
+}
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+moreBtn.addEventListener('click',function(){ limit+=STEP; render(false);
+  Array.prototype.slice.call(grid.children).filter(function(c){return !c.hidden}).slice(limit-STEP).forEach(function(c,j){ if(c.animate&&!reduce) c.animate([{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'none'}],{duration:700,delay:j*50,easing:'cubic-bezier(.22,.7,.2,1)',fill:'backwards'}); });
+});
+render(false);
+
+/* viewer */
+var lb=document.getElementById('lb'), cur=0;
+function show(i){ cur=i; var im=document.getElementById('lb-img'); im.src=IMG[ITEMS[i][0]]; im.alt=ITEMS[i][1];
+  document.getElementById('lb-t').textContent=ITEMS[i][1]; document.getElementById('lb-c').textContent=ITEMS[i][2]; }
+function openLb(i){ show(i); if(typeof lb.showModal==='function') lb.showModal(); }
+function stepLb(d){ var v=shown(), p=v.indexOf(cur); show(v[(p+d+v.length)%v.length]); }
+document.getElementById('lb-p').onclick=function(){stepLb(-1)};
+document.getElementById('lb-n').onclick=function(){stepLb(1)};
+document.getElementById('lb-x').onclick=function(){lb.close()};
+lb.addEventListener('click',function(e){ if(e.target===lb) lb.close(); });
+document.addEventListener('keydown',function(e){ if(!lb.open) return; if(e.key==='ArrowRight')stepLb(1); if(e.key==='ArrowLeft')stepLb(-1); });
+
+/* carving strip: arrows, drag, progress */
+var strip=document.getElementById('strip'), bar=document.getElementById('bar');
+function prog(){ var max=strip.scrollWidth-strip.clientWidth; var r=max>0?strip.scrollLeft/max:0; var w=Math.max(.15,strip.clientWidth/strip.scrollWidth); bar.style.width=(w*100)+'%'; bar.style.transform='translateX('+(r*(1/w-1)*100)+'%)'; }
+strip.addEventListener('scroll',prog,{passive:true}); window.addEventListener('resize',prog); prog();
+function by(d){ var f=strip.querySelector('figure'); strip.scrollBy({left:d*(f.offsetWidth+24),behavior:reduce?'auto':'smooth'}); }
+document.getElementById('s-prev').onclick=function(){by(-1)}; document.getElementById('s-next').onclick=function(){by(1)};
+var down=false,sx=0,sl=0,moved=false;
+strip.addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse')return; down=true;moved=false;sx=e.clientX;sl=strip.scrollLeft; });
+window.addEventListener('pointermove',function(e){ if(!down)return; var dx=e.clientX-sx; if(Math.abs(dx)>4){moved=true;strip.classList.add('drag');} strip.scrollLeft=sl-dx; });
+window.addEventListener('pointerup',function(){ if(!down)return; down=false; strip.classList.remove('drag'); });
+
+/* nav: border on scroll, hide on scroll down */
+var nav=document.getElementById('nav'), last=0;
+window.addEventListener('scroll',function(){ var y=window.scrollY||0; nav.classList.toggle('scrolled',y>10);
+  if(sheet.hidden) nav.classList.toggle('hide', y>last && y>400); last=y; },{passive:true});
+var mb=document.getElementById('menu-btn'), sheet=document.getElementById('sheet');
+mb.addEventListener('click',function(){ var o=sheet.hidden; sheet.hidden=!o; mb.setAttribute('aria-expanded',String(o)); });
+sheet.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ sheet.hidden=true; mb.setAttribute('aria-expanded','false'); }); });
+
+/* reveal on scroll (content stays visible if anything fails) */
+var rv=document.querySelectorAll('.rv,.rv-img');
+function revealAll(){ rv.forEach(function(el){el.classList.add('in')}); }
+if('IntersectionObserver' in window && !reduce){
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px'});
+  rv.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<innerHeight) el.classList.add('in'); else io.observe(el); });
+  setTimeout(function(){ document.querySelectorAll('.step.rv').forEach(function(s,i){ s.style.transitionDelay=(i%4*90)+'ms'; }); },0);
+} else revealAll();
+
+/* copy email */
+document.getElementById('copy').addEventListener('click',function(){
+  var b=this,t=document.getElementById('email').textContent;
+  function ok(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+  try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+});
+</script>
+
+</body>
+</html>
